@@ -75,11 +75,11 @@ public class Router {
         }
     }
 
-    public static void unRegisterComponent(String classname){
-        if (TextUtils.isEmpty(classname)){
+    public static void unRegisterComponent(String classname) {
+        if (TextUtils.isEmpty(classname)) {
             return;
         }
-        if (components.keySet().contains(classname)){
+        if (components.keySet().contains(classname)) {
             components.get(classname).onStop();
             components.remove(classname);
             return;
@@ -93,6 +93,5 @@ public class Router {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
