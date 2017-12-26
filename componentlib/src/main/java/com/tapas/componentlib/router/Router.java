@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 public class Router {
     private HashMap<String, Object> services = new HashMap<>();
-
+    //注册的组件的集合
     private static HashMap<String, IComponentRegister> components = new HashMap<>();
 
     private static volatile Router instance;
