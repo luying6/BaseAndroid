@@ -56,7 +56,6 @@ public class Router {
         services.remove(serviceName);
     }
 
-
     public static void reisterComponent(String className) {
         if (TextUtils.isEmpty(className)) {
             return;
