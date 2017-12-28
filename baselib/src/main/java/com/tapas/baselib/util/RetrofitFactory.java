@@ -7,6 +7,7 @@ import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.tapas.baselib.Constant;
+import com.tapas.baselib.SdkManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -85,7 +86,9 @@ public class RetrofitFactory {
                             .readTimeout(15, TimeUnit.SECONDS)
                             .writeTimeout(15, TimeUnit.SECONDS)
                             .retryOnConnectionFailure(true);
-
+                    if (!Constant.ENV_PRD){
+                        builder = SdkManager.initInterceptor(builder);
+                    }
                     retrofit = new Retrofit.Builder()
                             .baseUrl(Constant.BASE_URL)
                             .client(builder.build())
