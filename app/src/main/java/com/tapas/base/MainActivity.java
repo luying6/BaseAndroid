@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        openLoginActivity(null);
     }
 
 
@@ -31,6 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     //跳转其它模块的Activity
     public void openLoginActivity(Bundle bundle) {
-        UIRouter.getInstance().openUri(this, "tapas://login", bundle);
+       boolean open =  UIRouter.getInstance().openUri(this, "tapas://login", bundle);
     }
 }

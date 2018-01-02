@@ -1,9 +1,9 @@
 package com.tapas.login.component;
 
+import android.util.Log;
+
 import com.tapas.componentlib.component.IComponentRegister;
-import com.tapas.componentlib.router.Router;
 import com.tapas.componentlib.router.ui.UIRouter;
-import com.tapas.componentservice.LoginServer;
 
 /**
  * 创建人：luying
@@ -12,18 +12,23 @@ import com.tapas.componentservice.LoginServer;
  */
 
 public class LoginComponentRegister implements IComponentRegister{
-    Router router = Router.getInstance();
+//    Router router = Router.getInstance();
     UIRouter uiRouter = UIRouter.getInstance();
     LoginUIRouter loginUIRouter = LoginUIRouter.getInstance();
+
+    public LoginComponentRegister() {
+    }
+
     @Override
     public void onCreate() {
-        router.addService(LoginServer.class.getName(), new LoginServerImpl());
+//        router.addService(LoginServer.class.getName(), new LoginServerImpl());
         uiRouter.registerUI(loginUIRouter);
+        Log.i("2222222","11111");
     }
 
     @Override
     public void onStop() {
-        router.removeService(LoginServer.class.getName());
+//        router.removeService(LoginServer.class.getName());
         uiRouter.unregisterUI(loginUIRouter);
     }
 }

@@ -21,6 +21,9 @@ public class LoginUIRouter implements IComponentRouter {
     private static String[] HOSTS = new String[]{LOGINHOST};
     private static LoginUIRouter loginUIRouter = new LoginUIRouter();
 
+    public LoginUIRouter() {
+    }
+
     public static LoginUIRouter getInstance() {
         return loginUIRouter;
     }

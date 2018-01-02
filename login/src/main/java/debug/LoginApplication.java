@@ -1,4 +1,4 @@
-package com.tapas.login.debug;
+package debug;
 
 import com.tapas.baselib.base.BaseApplication;
 

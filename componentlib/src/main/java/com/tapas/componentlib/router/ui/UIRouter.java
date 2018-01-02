@@ -84,7 +84,7 @@ public class UIRouter implements IUIRouter {
     public boolean isUri(Uri uri) {
         for (IComponentRouter temp : uiRouters){
             if (temp.isUri(uri)) {
-                return false;
+                return true;
             }
         }
         return false;
