@@ -10,4 +10,6 @@ rootProject.ext {
     supportLibraryVersion = "27.0.2"
     retrofitVersion = "2.3.0"
     okhttpVersion = "3.9.0"
+
+    rxlifecycle2 = "2.2.1"
 }

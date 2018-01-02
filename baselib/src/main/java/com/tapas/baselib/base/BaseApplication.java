@@ -2,6 +2,8 @@ package com.tapas.baselib.base;
 
 import android.app.Application;
 
+import com.tapas.baselib.BuildConfig;
+import com.tapas.baselib.SdkManager;
 import com.tapas.baselib.util.TapasUtil;
 
 /**
@@ -22,5 +24,8 @@ public class BaseApplication extends Application{
         super.onCreate();
         sInstance = this;
         TapasUtil.init(this);
+        if (BuildConfig.DEBUG){
+            SdkManager.initStetho(this);
+        }
     }
 }
