@@ -1,7 +1,5 @@
 package com.tapas.baselib.util;
 
-import android.content.Context;
-
 import com.franmontiel.persistentcookiejar.ClearableCookieJar;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
@@ -41,17 +39,17 @@ public class RetrofitFactory {
 //    }
 
     //这个context用全局的
-    public static Retrofit getRetrofit(final Context context) {
+    public static Retrofit getRetrofit() {
         Interceptor cacheControlInterceptor = new Interceptor() {
             @Override
             public Response intercept(Chain chain) throws IOException {
                 Request request = chain.request();
-                if (!NetWorkUtil.isNetworkConnected(context)) {
+                if (!NetWorkUtil.isNetworkConnected(TapasUtil.getContext())) {
                     request = request.newBuilder().cacheControl(CacheControl.FORCE_CACHE).build();
                 }
 
                 Response originalResponse = chain.proceed(request);
-                if (NetWorkUtil.isNetworkConnected(context)) {
+                if (NetWorkUtil.isNetworkConnected(TapasUtil.getContext())) {
                     // 有网络时 设置缓存为默认值
                     String cacheControl = request.cacheControl().toString();
                     return originalResponse.newBuilder()
@@ -75,9 +73,9 @@ public class RetrofitFactory {
         if (retrofit == null) {
             synchronized (Retrofit.class) {
                 if (retrofit == null) {
-                    Cache cache = new Cache(new File(context.getCacheDir(), "TapasHttpCache"), 1024 * 1024 * 50);
+                    Cache cache = new Cache(new File(TapasUtil.getContext().getCacheDir(), "TapasHttpCache"), 1024 * 1024 * 50);
                     //cookie持久化
-                    ClearableCookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(context));
+                    ClearableCookieJar cookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(TapasUtil.getContext()));
                     OkHttpClient.Builder builder = new OkHttpClient.Builder()
                             .cookieJar(cookieJar)
                             .cache(cache)

@@ -12,5 +12,7 @@ public class LoginApplication extends BaseApplication{
     @Override
     public void onCreate() {
         super.onCreate();
+
+        //初始化作为module的单独入口时所需要的数据
     }
 }

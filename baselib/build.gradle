@@ -1,15 +1,14 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.0"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
-
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -27,11 +26,11 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
-    api 'com.android.support:appcompat-v7:27.0.2'
+    api "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support:support-annotations:$rootProject.ext.supportLibraryVersion"
     api 'com.android.support.constraint:constraint-layout:1.0.2'
-    api 'com.android.support:design:27.0.2'
-    api 'com.android.support:cardview-v7:27.0.2'
-    api 'com.android.support:support-annotations:27.0.2'
 
     //图片加载
     api 'com.github.bumptech.glide:glide:3.7.0'
@@ -39,9 +38,9 @@ dependencies {
     // 解析JSON
     api 'com.google.code.gson:gson:2.8.2'
     // retrofit 2
-    api 'com.squareup.retrofit2:retrofit:2.3.0'
-    api 'com.squareup.retrofit2:converter-gson:2.3.0'
-    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    api "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    api "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    api "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
 
 
     // RxJava 2
@@ -54,8 +53,8 @@ dependencies {
     api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.1'
 
     // okhttp 3
-    api 'com.squareup.okhttp3:okhttp:3.9.0'
-    debugApi 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    api "com.squareup.okhttp3:okhttp:$rootProject.ext.okhttpVersion"
+    debugApi "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVersion"
 
 
     // RxBinding
