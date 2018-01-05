@@ -7,7 +7,7 @@
 
         <activity android:name=".LoginActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name="debug.LoginDebugActivity"/>
+        <activity android:name="isapp.LoginDebugActivity"/>
     </application>
 
 </manifest>

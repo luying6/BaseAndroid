@@ -60,8 +60,6 @@ public class UIRouter implements IUIRouter {
     public boolean openUri(Context context, Uri uri, Bundle bundle) {
         for (IComponentRouter temp : uiRouters) {
             try {
-                boolean isuri = temp.isUri(uri);
-                boolean open = temp.openUri(context, uri, bundle);
                 if (temp.isUri(uri) && temp.openUri(context, uri, bundle)) {
                     return true;
                 }

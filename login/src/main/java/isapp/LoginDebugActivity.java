@@ -1,4 +1,4 @@
-package debug;
+package isapp;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,6 +18,6 @@ public class LoginDebugActivity extends AppCompatActivity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_login);
-        Toast.makeText(this, "测试", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "LoginDebugActivity", Toast.LENGTH_SHORT).show();
     }
 }

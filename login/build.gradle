@@ -1,4 +1,4 @@
-if (isModule.toBoolean()){
+if (isApp.toBoolean()){
     apply plugin: 'com.android.application'
 }else {
     apply plugin: 'com.android.library'
@@ -28,13 +28,13 @@ android {
 
     sourceSets{
         main{
-            if (isModule.toBoolean()){
+            if (isApp.toBoolean()){
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             }else{
                 manifest.srcFile 'src/main/AndroidManifest.xml'
-//                java{
-//                    exclude 'debug/**'
-//                }
+                java{
+                    exclude 'isapp/**'
+                }
             }
         }
     }

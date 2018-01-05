@@ -1,4 +1,4 @@
-package debug;
+package isapp;
 
 import com.tapas.baselib.base.BaseApplication;
 
