@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -71,6 +72,7 @@ dependencies {
 
     //调试工具
     debugApi 'com.facebook.stetho:stetho:1.5.0'
+
 
 
 }

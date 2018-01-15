@@ -32,6 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
     //跳转其它模块的Activity
     public void openLoginActivity(Bundle bundle) {
-       boolean open =  UIRouter.getInstance().openUri(this, "tapas://login", bundle);
+        UIRouter.getInstance().openUri(this, "tapas://login", bundle);
     }
 }

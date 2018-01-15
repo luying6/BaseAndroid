@@ -1,1 +1,1 @@
-include ':app', ':baselib', ':componentservice', ':componentlib', ':login'
+include ':app', ':baselib', ':router:componentservice', ':router:componentlib', ':login'
