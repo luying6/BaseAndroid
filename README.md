@@ -42,8 +42,8 @@ if (isApp.toBoolean()){
 
 
 
-### AMS区分组件独立运行和非独立运行
-在main目录下创建isapp包，然后里面创建一个ams，注意里面绑定的application是java/isapp下面的application，作为独立运行的入口,并且在组件的build.gradle添加如下代码:
+### Manifest文件区分组件独立运行和非独立运行
+在main目录下创建isapp包，然后里面创建一个Manifest，注意里面绑定的application是java/isapp下面的application，作为独立运行的入口,并且在组件的build.gradle添加如下代码:
 ```
 sourceSets{
         main{
@@ -58,7 +58,7 @@ sourceSets{
         }
     }
 ```
-控制独立运行的ams
+控制独立运行的Manifest
 
 
 ----
