@@ -6,7 +6,7 @@ BaseAndroid项目文档
 - [注意](#注意)
     - [组件独立运行](#组件独立运行)
     - [多个application合并](#多个application合并)
-    - [AMS区分组件独立运行和非独立运行](#AMS区分组件独立运行和非独立运行)
+    - [Mainfest区分组件独立运行和非独立运行](#Mainfest区分组件独立运行和非独立运行)
     - [Router](#Router)
 
 ---
