@@ -16,6 +16,7 @@ public class LoginComponentRegister implements IComponentRegister{
     UIRouter uiRouter = UIRouter.getInstance();
     LoginUIRouter loginUIRouter = LoginUIRouter.getInstance();
 
+
     @Override
     public void onCreate() {
         router.addService(LoginServer.class.getName(), new LoginServerImpl());
